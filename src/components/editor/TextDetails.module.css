@@ -1,0 +1,295 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    gap: 0;
+}
+
+.panel {
+    /* Toolbar Panel */
+    width: 56px;
+    background: #ffffff;
+    /* White background as requested "like this bar", user said "color as is" but image shows white. If "color as is" refers to dark theme, I should use dark. User said "maintain color as is HOWEVER like this bar". I will interpret "maintain color as is" as keeping the dark theme color #1a1528 but getting the SHAPE of the bar. */
+    background: #1a1528;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 12px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    height: auto;
+    z-index: 50;
+    pointer-events: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.drawer {
+    /* Slide-out Panel - Flow Position Sidebar */
+    position: relative;
+    /* Removed fixed positioning to allow it to push content */
+    width: 320px;
+    height: auto;
+    max-height: 80vh;
+    background: #130f1e;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    margin-left: 12px;
+    /* Gap from toolbar */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    align-self: center;
+    /* Center vertically relative to wrapper */
+    flex-shrink: 0;
+    /* Don't shrink */
+    /* Animation handled by Framer Motion now, but basic slideIn fall back */
+}
+
+.drawerContent {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* Custom Scrollbar for Chrome/Safari/Edge */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.drawerContent::-webkit-scrollbar {
+    width: 6px;
+}
+
+.drawerContent::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.drawerContent::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.drawerContent::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    padding: 24px;
+    padding-bottom: 20px;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    flex-shrink: 0;
+    /* Keep title fixed */
+}
+
+.closeBtn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.closeBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.subOptions {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    margin-left: 16px;
+    background: #1a1528;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    min-width: 140px;
+}
+
+.inputGroup {
+    margin-bottom: 0;
+    /* Handled by gap in drawerContent */
+}
+
+.label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+}
+
+.input,
+.textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px;
+    color: white;
+    font-family: inherit;
+    font-size: 0.9rem;
+    transition: border-color 0.2s;
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 100px;
+    line-height: 1.5;
+}
+
+.input:focus,
+.textarea:focus {
+    outline: none;
+    border-color: #8b5cf6;
+    background: rgba(139, 92, 246, 0.05);
+}
+
+.input option {
+    background: #1a1528;
+    color: white;
+    padding: 10px;
+}
+
+.colorInput {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background: none;
+    padding: 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.colorInput::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+.colorInput::-webkit-color-swatch {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.topGrid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.sectionTitle {
+    grid-column: span 3;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.formatBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 8px 4px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #a0a0a0;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.65rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.formatBtn:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.formatBtn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.formatActive {
+    border-color: #8b5cf6;
+    background: rgba(139, 92, 246, 0.1);
+    color: white;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.2);
+}
+
+.editBtn {
+    grid-column: span 3;
+    background: linear-gradient(135deg, #3b3055 0%, #2a2438 100%);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    margin-top: 8px;
+    padding: 10px;
+    font-size: 0.75rem;
+}
+
+.editBtn:hover {
+    filter: brightness(1.2);
+}
+
+.downloadBtn {
+    grid-column: span 2;
+    background: #8b5cf6;
+    border-color: #8b5cf6;
+    color: white;
+}
+
+.downloadBtn:hover {
+    background: #7c3aed;
+}
+
+.saveBtn {
+    grid-column: span 1;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 10px 0;
+}

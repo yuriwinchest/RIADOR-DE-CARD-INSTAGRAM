@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Using the project's dark theme as default */
+    --background: 253 47% 8%; /* #0f0b1e */
+    --foreground: 0 0% 100%; /* #ffffff */
+
+    --card: 256 31% 13%; /* #1a1528 (bg-secondary) */
+    --card-foreground: 0 0% 100%;
+
+    --popover: 256 31% 13%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 258 90% 66%; /* #8b5cf6 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 256 31% 20%; /* Slightly lighter than card */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 256 31% 20%;
+    --muted-foreground: 240 5% 64%; /* #a1a1aa */
+
+    --accent: 258 90% 66%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 256 31% 20%;
+    --input: 256 31% 20%;
+    --ring: 258 90% 66%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Original Styles Preserved below */
+:root {
+  /* Colors */
+  --bg-primary: #0f0b1e;
+  --bg-secondary: #1a1528;
+  --bg-card: #241e38;
+  
+  --primary: #8b5cf6;
+  --primary-hover: #7c3aed;
+  --primary-glow: rgba(139, 92, 246, 0.5);
+  
+  --accent: #d8b4fe;
+  --accent-secondary: #ec4899; /* Pinkish for gradients */
+  
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --text-muted: #6b7280;
+
+  --success: #10b981;
+  --success-bg: rgba(16, 185, 129, 0.1);
+
+  /* Spacing */
+  --container-width: 1200px;
+  --header-height: 80px;
+
+  /* Fonts */
+  --font-main: 'Outfit', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  /* background-color: var(--bg-primary); handled by tailwind layer now but keeping for safety */
+  /* color: var(--text-primary); */
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* Utilities */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.flex-col { flex-direction: column; }
+.gap-4 { gap: 1rem; }
+.gap-8 { gap: 2rem; }
+
+.text-center { text-align: center; }
+.w-full { width: 100%; }
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+h1 { font-size: 3.5rem; letter-spacing: -0.02em; }
+h2 { font-size: 2.5rem; letter-spacing: -0.01em; }
+h3 { font-size: 1.5rem; }
+
+p { color: var(--text-secondary); }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-card);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 50%, #fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

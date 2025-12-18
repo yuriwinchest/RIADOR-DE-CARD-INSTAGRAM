@@ -1,0 +1,120 @@
+.toolbar {
+    position: relative;
+    /* Changed from absolute to relative to sit in flow */
+    margin: 0 auto 20px auto;
+    /* Centered with bottom margin to push canvas */
+    background: white;
+    border-radius: 12px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    animation: slideDown 0.2s ease-out;
+    width: max-content;
+    /* Fit content */
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    padding-right: 16px;
+}
+
+.group::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background: #e5e7eb;
+}
+
+.group:last-child::after {
+    display: none;
+}
+
+.btn {
+    background: none;
+    border: none;
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #374151;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.btn:hover {
+    background: #f3f4f6;
+    color: #111827;
+}
+
+.active {
+    background: #eff6ff;
+    color: #3b82f6;
+}
+
+.select {
+    padding: 6px 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #374151;
+    background: white;
+    cursor: pointer;
+    outline: none;
+}
+
+.select:hover {
+    border-color: #d1d5db;
+}
+
+.numberInput {
+    width: 50px;
+    padding: 6px;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.colorPickerWrapper {
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.colorInput {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    margin: 0;
+}

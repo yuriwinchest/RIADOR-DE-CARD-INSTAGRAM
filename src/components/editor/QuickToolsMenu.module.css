@@ -1,0 +1,131 @@
+.menu {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: white;
+    padding: 8px 16px;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+    border: 1px solid #e5e7eb;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #6b7280;
+    transition: all 0.2s;
+    position: relative;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.item:hover {
+    background-color: #f3f4f6;
+    color: #111827;
+}
+
+.item.active {
+    background-color: #f3f4f6;
+    color: #7c3aed;
+}
+
+.closeBtn {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.closeBtn:hover {
+    color: #ef4444;
+    background-color: #fef2f2;
+}
+
+.subMenu {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    margin-bottom: 12px;
+    min-width: 200px;
+    z-index: 60;
+}
+
+.closeSubMenu {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    padding: 4px;
+    border-radius: 50%;
+    color: #9ca3af;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+.closeSubMenu:hover {
+    background-color: #f3f4f6;
+    color: #4b5563;
+}
+
+.subMenuGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.colorBtn {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.colorBtn:hover {
+    transform: scale(1.2);
+}
+
+.shapeBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border-radius: 6px;
+    color: #4b5563;
+    border: 1px solid transparent;
+    background: transparent;
+    cursor: pointer;
+}
+
+.shapeBtn:hover {
+    background-color: #f3f4f6;
+    color: #7c3aed;
+}

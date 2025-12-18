@@ -1,0 +1,265 @@
+.canvasArea {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    /* Side by side */
+    align-items: flex-start;
+    /* Align to top */
+    justify-content: flex-start;
+    /* Start from left */
+    position: relative;
+    padding: 0;
+    /* Remove padding to touch edges */
+    padding-top: 20px;
+    /* Small gap from top nav */
+    gap: 0;
+    /* No gap, let margin handle spacing if needed */
+    background: radial-gradient(circle at center, #1a1528 0%, #0d0b14 100%);
+    overflow: hidden;
+}
+
+.topBar {
+    position: relative;
+    /* Part of flex flow */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: auto;
+    height: 100%;
+    /* Full height */
+    background: transparent;
+    z-index: 50;
+    pointer-events: auto;
+    /* Enable clicks */
+    flex-shrink: 0;
+}
+
+.detailsContainer {
+    height: 100%;
+    width: auto;
+}
+
+.canvasWrapper {
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    /* Horizontally center */
+    margin-top: 0;
+    /* Align closely to top */
+}
+
+/* 1:1 Aspect Ratio */
+/* Instagram */
+.instagram-square,
+.instagram {
+    width: 600px;
+    height: 600px;
+}
+
+.instagram-story {
+    width: 337.5px;
+    /* 1080x1920 scale 9:16 */
+    height: 600px;
+}
+
+.instagram-portrait {
+    width: 480px;
+    /* 4:5 */
+    height: 600px;
+}
+
+/* WhatsApp */
+.whatsapp-status,
+.whatsapp {
+    width: 337.5px;
+    height: 600px;
+}
+
+/* Facebook */
+.facebook-post,
+.facebook {
+    width: 600px;
+    /* 1.91:1 is standard link but image post often 1:1 or 4:5. standard 1200x630 */
+    height: 314px;
+}
+
+.facebook-cover {
+    width: 700px;
+    height: 261px;
+    /* 820x312 approx */
+}
+
+/* YouTube */
+.youtube-thumbnail,
+.youtube {
+    width: 700px;
+    height: 394px;
+    /* 16:9 */
+}
+
+.youtube-banner {
+    width: 800px;
+    height: 450px;
+    /* 16:9 Full Canvas for Channel Art */
+}
+
+/* Twitter */
+.twitter-post,
+.twitter {
+    width: 600px;
+    height: 337.5px;
+    /* 16:9 */
+}
+
+.twitter-header {
+    width: 700px;
+    height: 233px;
+    /* 3:1 -> 1500x500 */
+}
+
+/* LinkedIn */
+.linkedin-post,
+.linkedin {
+    width: 600px;
+    height: 600px;
+    /* Often 1:1 or 1.91:1. Keeping 1:1 for generic post */
+}
+
+.linkedin-banner {
+    width: 700px;
+    height: 175px;
+    /* 4:1 -> 1584x396 */
+}
+
+/* TikTok */
+.tiktok-video,
+.tiktok {
+    width: 337.5px;
+    height: 600px;
+}
+
+.cardContent {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    /* Ensure whole image is visible */
+    background-repeat: no-repeat;
+    background-color: #000;
+    /* Fill empty space */
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 40px;
+}
+
+/* Overlay gradient for readability */
+.cardContent::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent 60%);
+    z-index: 1;
+}
+
+.textLayer {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.badge {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: var(--primary);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.headline {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 12px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.description {
+    font-size: 1rem;
+    line-height: 1.5;
+    opacity: 0.9;
+    max-width: 90%;
+    margin: 0 auto 20px;
+}
+
+.tags {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.zoomControls {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    background: #1a1528;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.zoomBtn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: background 0.2s;
+}
+
+.zoomBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.zoomBtn:first-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stageArea {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}

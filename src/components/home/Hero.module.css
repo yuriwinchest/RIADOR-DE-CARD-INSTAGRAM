@@ -1,0 +1,238 @@
+.heroSection {
+    padding-top: calc(var(--header-height) + 60px);
+    padding-bottom: 80px;
+    background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.15) 0%, transparent 50%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.heroContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--accent);
+    margin-bottom: 24px;
+}
+
+.badgeNew {
+    background: var(--primary);
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 500px;
+    color: var(--text-secondary);
+}
+
+.actions {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.primaryBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--primary);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.primaryBtn:hover {
+    background: var(--primary-hover);
+    box-shadow: 0 8px 24px var(--primary-glow);
+    transform: translateY(-2px);
+}
+
+.secondaryBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.secondaryBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.benefits {
+    display: flex;
+    gap: 24px;
+}
+
+.benefitItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.checkIcon {
+    color: var(--success);
+}
+
+/* Visuals Side */
+.visuals {
+    position: relative;
+    height: 500px;
+    /* Perspective for 3D effect */
+    perspective: 1000px;
+}
+
+.cardMockup {
+    position: absolute;
+    width: 320px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #2a2440 0%, #1a1625 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    transition: transform 0.5s ease;
+}
+
+.mockupPrimary {
+    top: 50px;
+    right: 40px;
+    z-index: 2;
+    transform: rotateY(-15deg) rotateX(5deg) scale(1.05);
+}
+
+.mockupSecondary {
+    top: 100px;
+    right: 180px;
+    z-index: 1;
+    transform: rotateY(-15deg) rotateX(5deg) scale(0.95);
+    opacity: 0.6;
+    filter: blur(1px);
+}
+
+.visuals:hover .mockupPrimary {
+    transform: rotateY(-10deg) rotateX(2deg) scale(1.08) translateY(-10px);
+}
+
+.visuals:hover .mockupSecondary {
+    transform: rotateY(-10deg) rotateX(2deg) scale(0.98) translateX(-20px);
+    opacity: 0.8;
+    filter: blur(0px);
+}
+
+/* Mockup Content Styling meant to mimic the image content */
+.mockupHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.mockupAvatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #4c1d95;
+}
+
+.mockupUser {
+    display: flex;
+    flex-direction: column;
+}
+
+.mockupName {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.mockupTime {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.mockupBody {
+    height: 200px;
+    background: #1e1b2e;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.mockupBody::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(139, 92, 246, 0.2), transparent);
+}
+
+.mockupFooter {
+    display: flex;
+    justify-content: space-between;
+}
+
+.whatsappBadge {
+    position: absolute;
+    right: -10px;
+    bottom: 80px;
+    background: #25D366;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+}
+
+.instaBadge {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
