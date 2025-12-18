@@ -14,6 +14,7 @@ dist-ssr
 .env
 .env.*
 .vercel
+.trae
 
 # Editor directories and files
 .vscode/*
