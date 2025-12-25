@@ -1,0 +1,127 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-primary, #0f0b1e);
+}
+
+.main {
+  flex: 1;
+  padding: 2rem 0;
+  color: var(--text-primary, #ffffff);
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.lastUpdate {
+  color: var(--text-secondary, #a1a1aa);
+  font-size: 0.9rem;
+  margin-bottom: 3rem;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-primary, #ffffff);
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary, #ffffff);
+}
+
+.text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-secondary, #e0e0e0);
+  margin-bottom: 1rem;
+}
+
+.list {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary, #e0e0e0);
+  line-height: 2;
+}
+
+.list li {
+  margin-bottom: 0.5rem;
+}
+
+.link {
+  color: #8b5cf6;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: #ec4899;
+  text-decoration: underline;
+}
+
+.backLink {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 8px;
+  color: #8b5cf6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.backButton:hover {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: rgba(139, 92, 246, 0.5);
+  transform: translateX(-4px);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .main {
+    padding: 1.5rem 0;
+  }
+}
+

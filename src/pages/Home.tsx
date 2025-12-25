@@ -7,10 +7,12 @@ import Testimonials from '../components/home/Testimonials';
 import CTASection from '../components/home/CTASection';
 import Footer from '../components/layout/Footer';
 import GoogleAdSense from '../components/common/GoogleAdSense';
+import SEO from '../components/common/SEO';
 
 const Home: React.FC = () => {
   return (
     <div className="home-page">
+      <SEO />
       <Header />
       <Hero />
       <Stats />
