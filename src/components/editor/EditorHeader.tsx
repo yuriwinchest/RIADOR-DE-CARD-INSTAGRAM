@@ -1,15 +1,21 @@
 import React from 'react';
-import { Layout, Save, Download } from 'lucide-react';
+import { Layout, Save, Download, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import styles from './EditorHeader.module.css';
 
 const EditorHeader: React.FC = () => {
     return (
         <header className={styles.header}>
-            <Link to="/" className={styles.logo}>
-                <Layout size={20} />
-                <span>Criador de Cards</span>
-            </Link>
+            <div className={styles.leftSection}>
+                <Link to="/" className={styles.backBtn}>
+                    <ArrowLeft size={18} />
+                    Voltar ao Início
+                </Link>
+                <Link to="/" className={styles.logo}>
+                    <Layout size={20} />
+                    <span>Criador de Cards</span>
+                </Link>
+            </div>
 
             <div className={styles.actions}>
                 <button className={styles.saveBtn}>

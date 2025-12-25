@@ -6,13 +6,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100px;
+  min-height: 200px;
+  background: rgba(139, 92, 246, 0.05);
+  border: 1px dashed rgba(139, 92, 246, 0.3);
+  border-radius: 8px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .container {
     padding: 1.5rem 1rem;
+    min-height: 150px;
   }
 }
 

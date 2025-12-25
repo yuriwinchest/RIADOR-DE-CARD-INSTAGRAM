@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import CanvasArea, { type CanvasElement } from '../components/editor/CanvasArea';
+import EditorHeader from '../components/editor/EditorHeader';
 import styles from './Editor.module.css';
 
 const Editor: React.FC = () => {
@@ -77,6 +78,7 @@ const Editor: React.FC = () => {
 
     return (
         <div className={styles.page}>
+            <EditorHeader />
             <main className={styles.main}>
                 <div className={styles.workspace}>
                     <CanvasArea
