@@ -6,6 +6,7 @@ import HowItWorks from '../components/home/HowItWorks';
 import Testimonials from '../components/home/Testimonials';
 import CTASection from '../components/home/CTASection';
 import Footer from '../components/layout/Footer';
+import GoogleAdSense from '../components/common/GoogleAdSense';
 
 const Home: React.FC = () => {
   return (
@@ -13,6 +14,7 @@ const Home: React.FC = () => {
       <Header />
       <Hero />
       <Stats />
+      <GoogleAdSense />
       <HowItWorks />
       <Testimonials />
       <CTASection />
